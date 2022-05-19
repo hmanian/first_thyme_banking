@@ -21,17 +21,26 @@ const formReducer = (state, event) => {
     
 }*/
 
+var monthlyIncomeInput = 0;
 //const Profile = () => {
 function Profile() {
     const [formData, setFormData] = useReducer(formReducer, {});
     const [submitting, setSubmitting] = useState(false);
+
     const handleSubmit = event => {
         event.preventDefault();
-    setSubmitting(true);
+        localStorage.setItem("monthlyIncome", event.target.elements[3].value);
+        localStorage.setItem("monthlyExpenses1", event.target.elements[6].value);
+        localStorage.setItem("monthlyExpenses1Selection", event.target.elements[5].value);
+        localStorage.setItem("monthlyExpenses2", event.target.elements[9].value);
+        localStorage.setItem("monthlyExpenses2Selection", event.target.elements[8].value);
+        localStorage.setItem("monthlyExpenses3", event.target.elements[12].value);
+        localStorage.setItem("monthlyExpenses3Selection", event.target.elements[11].value);
 
-    setTimeout(() => {
-        setSubmitting(false);
-    }, 500)
+        setTimeout(() => {
+            setSubmitting(false);
+        }, 500)
+    
     }
 
     const handleChange = event => {
@@ -40,6 +49,8 @@ function Profile() {
           value: event.target.value,
         });
     }
+
+    
 
     return(
         <div className="wrapper">
@@ -55,35 +66,36 @@ function Profile() {
                     <p>Username</p>
                     <input name="name" onChange={handleChange} />
                     <p>Monthly Income</p>
-                    <input type="number" income="monthly income" onChange={handleChange} step="100"/>
+                    <input type="number" name="monthlyIncomeName" onChange={handleChange} step="100"/>
                 </label>
-                
-
+               
                 <fieldset>
+                
                 <label>
                 <p>Monthly Expense</p>
                 <select name="addExpense" onChange={handleChange}>
                     <option value="">--Please choose an option--</option>
-                    <option value="rent">Rent</option>
-                    <option value="food">Food</option>
-                    <option value="gas">Gas</option>
-                    <option value="student loans">Loans</option>
-                    <option value="other">Other</option>
+                    <option value="Rent">Rent</option>
+                    <option value="Food">Food</option>
+                    <option value="Gas">Gas</option>
+                    <option value="Loans">Student Loans</option>
+                    <option value="Other">Other</option>
                 </select>
                     <p>Expense Amount</p>
                     <input type="number" name="expenses1" onChange={handleChange} step="1"/>
                 </label>
                 </fieldset>
+                
                 <fieldset>
                 <label>
                 <p>Monthly Expense</p>
                 <select name="addExpense" onChange={handleChange}>
                     <option value="">--Please choose an option--</option>
-                    <option value="rent">Rent</option>
-                    <option value="food">Food</option>
-                    <option value="gas">Gas</option>
-                    <option value="student loans">Loans</option>
-                    <option value="other">Other</option>
+                    <option value="Rent">Rent</option>
+                    <option value="Food">Food</option>
+                    <option value="Gas">Gas</option>
+                    <option value="Loans">Student Loans</option>
+                    <option value="Other">Other</option>
                 </select>
                     <p>Expense Amount</p>
                     <input type="number" name="expenses2" onChange={handleChange} step="1"/>
@@ -94,11 +106,11 @@ function Profile() {
                 <p>Monthly Expense</p>
                 <select name="addExpense" onChange={handleChange}>
                     <option value="">--Please choose an option--</option>
-                    <option value="rent">Rent</option>
-                    <option value="food">Food</option>
-                    <option value="gas">Gas</option>
-                    <option value="student loans">Loans</option>
-                    <option value="other">Other</option>
+                    <option value="Rent">Rent</option>
+                    <option value="Food">Food</option>
+                    <option value="Gas">Gas</option>
+                    <option value="Loans">Student Loans</option>
+                    <option value="Other">Other</option>
                 </select>
                     <p>Expense Amount</p>
                     <input type="number" name="expenses3" onChange={handleChange} step="1"/>
@@ -106,8 +118,10 @@ function Profile() {
                 </fieldset>
                 </fieldset>
 
+
                 <button type="submit">Submit</button>
             </form>
+            
         </div>
     )
 }
