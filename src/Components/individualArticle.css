@@ -23,11 +23,6 @@
         height: 100%;
 }
 
-.articleContent {
-
-}
-
-
 .articleInfo { 
         display: flex;
         justify-content: space-between;
