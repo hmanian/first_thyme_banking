@@ -59,65 +59,76 @@ function Profile() {
                 <div>Submitting Form...</div>
             }
             <form onSubmit={handleSubmit}>
-                <fieldset>
-                <label>
-                    <p>Full Name</p>
-                    <input name="name" onChange={handleChange} />
-                    <p>Username</p>
-                    <input name="userName" onChange={handleChange} />
-                    <p>Monthly Income</p>
-                    <input type="number" name="monthlyIncomeName" onChange={handleChange} step="100"/>
-                </label>
-               
-                <fieldset>
-                
-                <label>
-                <p>Monthly Expense</p>
-                <select name="addExpense1" onChange={handleChange}>
-                    <option value="">--Please choose an option--</option>
-                    <option value="Rent">Rent</option>
-                    <option value="Food">Food</option>
-                    <option value="Gas">Gas</option>
-                    <option value="Loans">Student Loans</option>
-                    <option value="Other">Other</option>
-                </select>
-                    <p>Expense Amount</p>
-                    <input type="number" name="expenses1" onChange={handleChange} step="1"/>
-                </label>
-                </fieldset>
-                
-                <fieldset>
-                <label>
-                <p>Monthly Expense</p>
-                <select name="addExpense2" onChange={handleChange}>
-                    <option value="">--Please choose an option--</option>
-                    <option value="Rent">Rent</option>
-                    <option value="Food">Food</option>
-                    <option value="Gas">Gas</option>
-                    <option value="Loans">Student Loans</option>
-                    <option value="Other">Other</option>
-                </select>
-                    <p>Expense Amount</p>
-                    <input type="number" name="expenses2" onChange={handleChange} step="1"/>
-                </label>
-                </fieldset>
-                <fieldset>
-                <label>
-                <p>Monthly Expense</p>
-                <select name="addExpense3" onChange={handleChange}>
-                    <option value="">--Please choose an option--</option>
-                    <option value="Rent">Rent</option>
-                    <option value="Food">Food</option>
-                    <option value="Gas">Gas</option>
-                    <option value="Loans">Student Loans</option>
-                    <option value="Other">Other</option>
-                </select>
-                    <p>Expense Amount</p>
-                    <input type="number" name="expenses3" onChange={handleChange} step="1"/>
-                </label>
-                </fieldset>
-                </fieldset>
 
+                    <label for="name">Full Name</label>
+                    <input name="name" onChange={handleChange} />
+                    <br /><br />
+                    <label for="user">Username</label>
+                    <input name="user" onChange={handleChange} />
+                    <br /><br />
+                    <label for="monthlyIncomeName">Monthly Income</label>
+                    <input type="number" name="monthlyIncomeName" onChange={handleChange} step="100"/>
+                    <br /><br />
+
+                <div className="selectAndInput">
+                        <div className="monthlyExpenseDrop">
+                                <label for="addExpense">Monthly Expense</label>
+                                <select name="addExpense" onChange={handleChange}>
+                                <option value="">--Please choose an option--</option>
+                                <option value="Rent">Rent</option>
+                                <option value="Food">Food</option>
+                                <option value="Gas">Gas</option>
+                                <option value="Loans">Student Loans</option>
+                                <option value="Other">Other</option>
+                                </select>
+                        </div>  
+                
+                        <div className="monthlyExpense">
+                                <label for="expenses1">Expense Amount</label>
+                                <input type="number" name="expenses1" onChange={handleChange} step="1"/>
+                        </div>
+                    </div>
+                    <br />
+
+                    <div className="selectAndInput">
+                        <div className="monthlyExpenseDrop">
+                                <label for='addExpense'>Monthly Expense</label>
+                                <select name="addExpense" onChange={handleChange}>
+                                <option value="">--Please choose an option--</option>
+                                <option value="Rent">Rent</option>
+                                <option value="Food">Food</option>
+                                <option value="Gas">Gas</option>
+                                <option value="Loans">Student Loans</option>
+                                <option value="Other">Other</option>
+                                </select>
+                        </div>       
+
+                        <div className="monthlyExpense">
+                                <label for="expenses2">Expense Amount</label>
+                                <input type="number" name="expenses2" onChange={handleChange} step="1"/>
+                        </div>
+                </div>
+                <br />
+
+                <div className="selectAndInput">
+                        <div className="monthlyExpenseDrop">
+                                <label for="addExpense2">Monthly Expense</label>
+                                <select name="addExpense2" onChange={handleChange}>
+                                <option value="">--Please choose an option--</option>
+                                <option value="Rent">Rent</option>
+                                <option value="Food">Food</option>
+                                <option value="Gas">Gas</option>
+                                <option value="Loans">Student Loans</option>
+                                <option value="Other">Other</option>
+                                </select>       
+                        </div>
+                
+                        <div className="monthlyExpense">
+                                <label for="expenses3">Expense Amount</label>
+                                <input type="number" name="expenses3" onChange={handleChange} step="1"/>
+                        </div>
+                    </div>
+                    <br /><br />
 
                 <button type="submit">Submit</button>
             </form>

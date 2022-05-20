@@ -1,0 +1,19 @@
+.filter {
+        width: 60vw;
+        margin: auto;
+        display: flex;
+}
+
+.filterOption {
+        width: 30%;
+        display: flex;
+        
+}
+
+.articles {
+        display: flex;
+        /* important */
+        flex-wrap: wrap;
+        max-width: 80%;
+        margin: auto;
+}
