@@ -1,7 +1,56 @@
 .wrapper {
-    padding: 5px 20px;
+        padding: 5px 20px;
 }
 
 .wrapper fieldset {
-    margin: 20px 0;
+        margin: 20px 0;
+}
+
+form {
+        width: 50vw;
+        margin: 0px auto;
+        text-align: left;
+}
+
+fieldset {
+        border: none;
+}
+
+input:not([type="checkbox"]) {
+        height: 35px;
+        width: 100%;
+        font-size: 1.025em;
+}
+
+select {
+        height: 40px;
+        width: 100%;
+        font-size: 1.01em;
+}
+
+.selectAndInput {
+        display: flex;
+        justify-content: space-between;
+}
+
+.monthlyExpenseDrop {
+        width: 35%
+}
+
+.monthlyExpense {
+        width: 63%
+}
+
+button[type=submit] {
+        width: 50vw;
+        height: 40px;
+        border: none;
+        color: black;
+        font-size: 1.1em;
+        border-radius: 2px;
+        border: 1px solid #999;
+}
+
+button[type=submit]:hover {
+        background: #ddd;
 }
