@@ -57,11 +57,10 @@ const Header = () => {
           <SidebarContent>
             <Menu iconShape="square">
 
-              
-              <MenuItem icon={<FaChartLine />}><Link to="/Budget">Budget</Link></MenuItem>
               <MenuItem icon={<FaChartPie />}><Link to="/Profile">Profile</Link></MenuItem>
-              <MenuItem icon={<FaCreditCard />}><Link to="/Finances">Finances</Link></MenuItem>
-              <MenuItem icon={<FaPiggyBank />}><Link to="/Walc">Walc</Link></MenuItem>
+              <MenuItem icon={<FaChartLine />}><Link to="/Budget">Personalized Budgeting</Link></MenuItem>
+              <MenuItem icon={<FaCreditCard />}><Link to="/Finances">Financial Info</Link></MenuItem>
+              <MenuItem icon={<FaPiggyBank />}><Link to="/Walc">Budgeting Journal</Link></MenuItem>
             </Menu>
           </SidebarContent>
         </ProSidebar>
