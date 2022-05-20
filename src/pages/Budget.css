@@ -1,17 +1,7 @@
-#parrishAvailability{
-    position: absolute;
-    left: 100px;
-}
 
-#parrishFood{
-    position: absolute;
-    left: 100px;
-    top: 400px;
-}
-
-#parrishVolume{
-    position: absolute;
-    left: 100px;
-    top: 700px;
-}
+#myDIV {
+    border:solid 1px #c0c0c0;
+    padding:10px;
+    display:none;
+   }
 

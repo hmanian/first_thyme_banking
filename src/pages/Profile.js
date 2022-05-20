@@ -64,7 +64,7 @@ function Profile() {
                     <p>Full Name</p>
                     <input name="name" onChange={handleChange} />
                     <p>Username</p>
-                    <input name="name" onChange={handleChange} />
+                    <input name="userName" onChange={handleChange} />
                     <p>Monthly Income</p>
                     <input type="number" name="monthlyIncomeName" onChange={handleChange} step="100"/>
                 </label>
@@ -73,7 +73,7 @@ function Profile() {
                 
                 <label>
                 <p>Monthly Expense</p>
-                <select name="addExpense" onChange={handleChange}>
+                <select name="addExpense1" onChange={handleChange}>
                     <option value="">--Please choose an option--</option>
                     <option value="Rent">Rent</option>
                     <option value="Food">Food</option>
@@ -89,7 +89,7 @@ function Profile() {
                 <fieldset>
                 <label>
                 <p>Monthly Expense</p>
-                <select name="addExpense" onChange={handleChange}>
+                <select name="addExpense2" onChange={handleChange}>
                     <option value="">--Please choose an option--</option>
                     <option value="Rent">Rent</option>
                     <option value="Food">Food</option>
@@ -104,7 +104,7 @@ function Profile() {
                 <fieldset>
                 <label>
                 <p>Monthly Expense</p>
-                <select name="addExpense" onChange={handleChange}>
+                <select name="addExpense3" onChange={handleChange}>
                     <option value="">--Please choose an option--</option>
                     <option value="Rent">Rent</option>
                     <option value="Food">Food</option>

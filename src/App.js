@@ -7,6 +7,7 @@ import Finances from './pages/Finances';
 import Walc from './pages/Walc';
 import Home from './pages/Home';
 import Header from './Components/Header/Header.js';
+import PieChartPage from './pages/PieChartPage';
 
 
 function App() {
@@ -21,6 +22,9 @@ function App() {
                     </Route>
                     <Route exact path="/Budget">
                         <Budget />
+                        <Route exact path="/PieChartPage">
+                        <PieChartPage />
+                        </Route>
                     </Route>
                     <Route exact path="/Profile">
                         <Profile />
@@ -31,6 +35,7 @@ function App() {
                     <Route exact path="/Walc">
                         <Walc />
                     </Route>
+                    
                 </Switch>
             </div>
         </div>

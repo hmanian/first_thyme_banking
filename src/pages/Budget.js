@@ -1,5 +1,8 @@
 import React, { useReducer, useState } from "react";
-import './Budget.css'
+import './Budget.css';
+import './PieChartPage';
+import { Link, Route } from "react-router-dom";
+import PieChartPage from "./PieChartPage";
 
 const formReducer = (state, event) => {
     return {
@@ -7,6 +10,8 @@ const formReducer = (state, event) => {
       [event.name]: event.value
     }
 }
+
+
 
 //const Budget = () => {
 function Budget() {
@@ -31,14 +36,16 @@ function Budget() {
         event.preventDefault();
         //localStorage.setItem("spendingTarget", event.target.elements[1].value);
         //console.log(event.target.elements[1].value);
+        //<button onclick="/PieChartPage">Go to Pie Chart</button>
     
         localStorage.setItem("spendingTarget", event.target.elements[1].value);
-    
+        displayMoneyLeft();
     setSubmitting(true);
 
     setTimeout(() => {
         setSubmitting(false);
     }, 500)
+    displayMoneyLeft();
     }
 
     const handleChange = event => {
@@ -81,31 +88,41 @@ function Budget() {
         <div className="Budget">
             <h1>Personalized Budgeting</h1>
 
-            <p>You currently have ${remainingMoney}</p>
+            <h3>You currently have ${remainingMoney}</h3>
             {submitting &&
                 <div>Submitting Form...</div>
-            }
+            } 
             <form onSubmit={handleSubmit}>
-                <input type="number" name="spendingTarget" onChange={handleChange} />
-                <button type="submit">Submit</button>
-            </form>
-
-            <script>
-            <fieldset>
-                <label>
-                <p>You currently have ${remainingMoney - "spendingTarget"} left</p>
-                </label>
-            </fieldset>
-            </script>
+            <p>Enter your monthly spending target:</p>
+            <input type="number" name="spendingTarget" onChange={handleChange} />
+            <button type="submit">Submit</button>
+            <p> You will have ${(localStorage.getItem("remainingMoney") - localStorage.getItem("spendingTarget"))} left</p>
+            </form> 
+             
+           
+           
 
             <div id="my-pie-chart"> </div>
             <p></p>
-            <button onclick="./PieChartPage">Go to Pie Chart</button>
+
+            <Route path="./PieChartPage" component={PieChartPage} />    
+            <Link to="./PieChartPage"><button>Go to Pie Chart</button></Link>
         
         </div>
         
        
     );
+}
+
+function displayMoneyLeft() {
+    var x = document.getElementById("myDIV");
+    if (x.style.display == "none" || x.style.display == "") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+        //<p>You will have ${(localStorage.getItem("remainingMoney") - localStorage.getItem("spendingTarget"))} left</p>
+
 }
 
 export default Budget;
