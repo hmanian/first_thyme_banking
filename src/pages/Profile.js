@@ -50,7 +50,7 @@ function Profile() {
     }
 
     
-document.getElementById.value()
+
     return(
         <div className="wrapper">
             <h1>Profile</h1>

@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import { data } from '../data/articles';
 import Article from '../Components/individualArticle';
 import "./Finances.css";
