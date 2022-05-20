@@ -1,10 +1,11 @@
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Profile from './pages/Profile';
-import Parrish from './pages/Budget';
-import Finances from "./pages/Finances";
-import Walc from "./pages/Walc";
-import Home from "./pages/Home";
+//import PieChartPage from './pages/PieChartPage';
+import Budget from './pages/Budget';
+import Finances from './pages/Finances';
+import Walc from './pages/Walc';
+import Home from './pages/Home';
 import Header from './Components/Header/Header.js';
 
 
@@ -15,11 +16,11 @@ function App() {
           <Header />
             <div className="Content">
                 <Switch>
-                    <Route exact path="/">
+                    <Route exact path="/ ">
                         <Home />
                     </Route>
                     <Route exact path="/Budget">
-                        <Parrish />
+                        <Budget />
                     </Route>
                     <Route exact path="/Profile">
                         <Profile />
