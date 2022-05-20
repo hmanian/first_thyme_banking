@@ -8,7 +8,6 @@ const formReducer = (state, event) => {
     }
 }
 
-
 /*function newMonthlyExpense() {
     const [formData, setFormData] = useReducer(formReducer, {});
     const handleChange = event => {
@@ -29,13 +28,13 @@ function Profile() {
 
     const handleSubmit = event => {
         event.preventDefault();
-        localStorage.setItem("monthlyIncome", event.target.elements[3].value);
-        localStorage.setItem("monthlyExpenses1", event.target.elements[6].value);
-        localStorage.setItem("monthlyExpenses1Selection", event.target.elements[5].value);
-        localStorage.setItem("monthlyExpenses2", event.target.elements[9].value);
-        localStorage.setItem("monthlyExpenses2Selection", event.target.elements[8].value);
-        localStorage.setItem("monthlyExpenses3", event.target.elements[12].value);
-        localStorage.setItem("monthlyExpenses3Selection", event.target.elements[11].value);
+        localStorage.setItem("monthlyIncome", document.getElementById('monthlyIncome').value);
+        localStorage.setItem("monthlyExpenses1", document.getElementById('expenses').value);
+        localStorage.setItem("monthlyExpenses1Selection", document.getElementById('addExpense').value);
+        localStorage.setItem("monthlyExpenses2", document.getElementById('expenses1').value);
+        localStorage.setItem("monthlyExpenses2Selection", document.getElementById('addExpense1').value);
+        localStorage.setItem("monthlyExpenses3", document.getElementById('expenses2').value);
+        localStorage.setItem("monthlyExpenses3Selection", document.getElementById('addExpense2').value);
 
         setTimeout(() => {
             setSubmitting(false);
@@ -51,7 +50,7 @@ function Profile() {
     }
 
     
-
+document.getElementById.value()
     return(
         <div className="wrapper">
             <h1>Profile</h1>
@@ -66,14 +65,14 @@ function Profile() {
                     <label for="user">Username</label>
                     <input name="user" onChange={handleChange} />
                     <br /><br />
-                    <label for="monthlyIncomeName">Monthly Income</label>
-                    <input type="number" name="monthlyIncomeName" onChange={handleChange} step="100"/>
+                    <label for="monthlyIncome">Monthly Income</label>
+                    <input type="number" name="monthlyIncome" id="monthlyIncome" onChange={handleChange} step="100"/>
                     <br /><br />
 
                 <div className="selectAndInput">
                         <div className="monthlyExpenseDrop">
                                 <label for="addExpense">Monthly Expense</label>
-                                <select name="addExpense" onChange={handleChange}>
+                                <select name="addExpense" id="addExpense" onChange={handleChange}>
                                 <option value="">--Please choose an option--</option>
                                 <option value="Rent">Rent</option>
                                 <option value="Food">Food</option>
@@ -84,16 +83,16 @@ function Profile() {
                         </div>  
                 
                         <div className="monthlyExpense">
-                                <label for="expenses1">Expense Amount</label>
-                                <input type="number" name="expenses1" onChange={handleChange} step="1"/>
+                                <label for="expenses">Expense Amount</label>
+                                <input type="number" name="expenses" id="expenses" onChange={handleChange} step="1"/>
                         </div>
                     </div>
                     <br />
 
                     <div className="selectAndInput">
                         <div className="monthlyExpenseDrop">
-                                <label for='addExpense'>Monthly Expense</label>
-                                <select name="addExpense" onChange={handleChange}>
+                                <label for='addExpense1'>Monthly Expense</label>
+                                <select name="addExpense1" id="addExpense1" onChange={handleChange}>
                                 <option value="">--Please choose an option--</option>
                                 <option value="Rent">Rent</option>
                                 <option value="Food">Food</option>
@@ -104,8 +103,8 @@ function Profile() {
                         </div>       
 
                         <div className="monthlyExpense">
-                                <label for="expenses2">Expense Amount</label>
-                                <input type="number" name="expenses2" onChange={handleChange} step="1"/>
+                                <label for="expenses1">Expense Amount</label>
+                                <input type="number" name="expenses1" id="expenses1" onChange={handleChange} step="1"/>
                         </div>
                 </div>
                 <br />
@@ -113,7 +112,7 @@ function Profile() {
                 <div className="selectAndInput">
                         <div className="monthlyExpenseDrop">
                                 <label for="addExpense2">Monthly Expense</label>
-                                <select name="addExpense2" onChange={handleChange}>
+                                <select name="addExpense2" id="addExpense2" onChange={handleChange}>
                                 <option value="">--Please choose an option--</option>
                                 <option value="Rent">Rent</option>
                                 <option value="Food">Food</option>
@@ -124,8 +123,8 @@ function Profile() {
                         </div>
                 
                         <div className="monthlyExpense">
-                                <label for="expenses3">Expense Amount</label>
-                                <input type="number" name="expenses3" onChange={handleChange} step="1"/>
+                                <label for="expenses2">Expense Amount</label>
+                                <input type="number" name="expenses2" id="expenses2" onChange={handleChange} step="1"/>
                         </div>
                     </div>
                     <br /><br />
